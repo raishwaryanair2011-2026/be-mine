@@ -1,0 +1,266 @@
+/* =====================
+   Global
+   ===================== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =====================
+   Container
+   ===================== */
+.container {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 24px 32px;
+}
+
+/* =====================
+   Headings
+   ===================== */
+h1 {
+  font-size: 2.8rem;
+  min-height: 4rem;
+  margin: 0;
+  padding: 0 6px;
+  box-sizing: border-box;
+  overflow: visible;
+  white-space: normal;
+}
+
+.final h1 {
+  font-size: 3.5rem;
+}
+
+.final h2 {
+  margin-top: 10px;
+  animation: pop 0.6s ease-in-out;
+}
+
+/* =====================
+   Buttons
+   ===================== */
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.yes {
+  background-color: #ff4d6d;
+  color: white;
+  margin-right: 20px;
+}
+
+.no {
+  background-color: #333;
+  color: white;
+}
+
+.progress {
+  margin-top: 20px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* =====================
+   Name Input
+   ===================== */
+.name-input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.name-input:focus {
+  outline: none;
+}
+
+/* =====================
+   Typing Safety
+   ===================== */
+.typing-container {
+  min-height: 4rem;
+  overflow: visible;
+}
+
+/* =====================
+   Images
+   ===================== */
+.photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.image-wrapper {
+  animation: slideFade 0.6s ease-in-out;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =====================
+   Floating Hearts
+   ===================== */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   Confetti
+   ===================== */
+.confetti {
+  position: fixed;
+  top: -20px;
+  animation: confettiFall linear forwards;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes confettiFall {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   Animations
+   ===================== */
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =====================
+   Mobile Friendly Styles
+   ===================== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 20px 16px;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 40px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    min-height: 3.2rem;
+    line-height: 1.25;
+  }
+
+  .final h1 {
+    font-size: 2.4rem;
+  }
+
+  .final h2 {
+    font-size: 1.2rem;
+  }
+
+  .photo {
+    width: 180px;
+    height: 180px;
+    margin: 16px 0;
+  }
+
+  .buttons {
+    margin-top: 24px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
+    margin: 10px 0;
+  }
+
+  .yes {
+    margin-right: 0;
+  }
+
+  .progress {
+    font-size: 0.85rem;
+    margin-top: 14px;
+  }
+
+  .name-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+/* Sticky YES button on mobile */
+@media (max-width: 600px) {
+  .yes {
+    position: sticky;
+    bottom: 12px;
+    z-index: 5;
+  }
+}
+
+.no {
+  background-color: #333;
+  color: white;
+  padding: 18px 28px;     /* 👈 bigger tap area */
+  min-width: 120px;
+}
